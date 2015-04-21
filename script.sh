@@ -25,7 +25,5 @@ if [ $? -ne 0 ]; then
 	which ruby
 fi
 
-
-
 # Remove installer
-rm -rf /var/cache/downloads/$CHEFDK_INSTALLER
+rm -f /var/cache/downloads/$CHEFDK_INSTALLER
