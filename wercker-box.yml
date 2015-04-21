@@ -10,4 +10,5 @@ packages:
 script: |
   pwd
   whoami
+  sudo apt-get -y install git
   ./script.sh
