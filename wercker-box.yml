@@ -8,8 +8,6 @@ keywords:
 packages:
   - chef-dk@0.4.0-1
 script: |
-  pwd
-  whoami
   sudo apt-get -y update
   sudo apt-get -y install git wget
   sudo wget -nv -N -P /var/cache/downloads https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.4.0-1_amd64.deb
@@ -17,5 +15,3 @@ script: |
   sudo rm -f /var/cache/downloads/chefdk_0.4.0-1_amd64.deb
   chef -v
   echo 'eval "$(chef shell-init bash)"' | sudo tee --append /etc/profile > /dev/null
-  source /etc/profile
-  which ruby
