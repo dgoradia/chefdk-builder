@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "opscode-ubuntu-12.04"
-  config.vm.box_url = "http://10.1.70.60/vagrant/boxes/ubuntu/opscode_ubuntu-12.04_chef-provisionerless.box"
+  config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box"
   config.vm.provision :shell, :path => "script.sh"
 
   # Disable automatic box update checking. If you disable this, then
