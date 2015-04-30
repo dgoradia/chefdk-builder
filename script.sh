@@ -5,7 +5,7 @@ yellow='\033[1;33m'
 NC='\033[0m'
 
 # Required dependencies
-sudo apt-get -y install git
+sudo apt-get -y install git build-essential
 sudo apt-get -y update
 
 # Check if exists and install
