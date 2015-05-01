@@ -17,17 +17,5 @@ script: |
   sudo rm -f /var/cache/downloads/chefdk_0.5.1-1_amd64.deb
   chef -v
   echo 'eval "$(chef shell-init bash)"' | sudo tee --append /etc/profile > /dev/null
-  cat > Gemfile <<EOL
-    source 'https://rubygems.org'
-
-    ruby '2.1.5'
-
-    gem 'rake', '10.4.2'
-    gem 'chef', '12.0.3'
-    gem 'berkshelf', '3.2.3'
-    gem 'chef-vault', '2.5.0'
-    gem 'chefspec', '4.2.0'
-    gem 'foodcritic', '4.0.0'
-    gem 'test-kitchen'
-  EOL
+  printf "source 'https://rubygems.org'%s\n%s\nruby '2.1.5'%s\n%s\ngem 'rake', '10.4.2'%s\ngem 'chef', '12.0.3'%s\ngem 'berkshelf', '3.2.3'%s\ngem 'chef-vault', '2.5.0'%s\ngem 'chefspec', '4.2.0'%s\ngem 'foodcritic', '4.0.0'%s\ngem 'test-kitchen'"
   bundle install
