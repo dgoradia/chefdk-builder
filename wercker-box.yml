@@ -1,5 +1,5 @@
 name: chefdk-builder
-version: 1.1.21
+version: 1.1.22
 type: main
 platform: ubuntu@12.04
 description: Wercker box for ChefDK
@@ -18,4 +18,5 @@ script: |
   chef -v
   echo 'eval "$(chef shell-init bash)"' | sudo tee --append /etc/profile > /dev/null
   printf "source 'https://rubygems.org'%s\n%s\nruby '2.1.5'%s\n%s\ngem 'rake', '10.4.2'%s\ngem 'chef', '12.0.3'%s\ngem 'berkshelf', '3.2.3'%s\ngem 'chef-vault', '2.5.0'%s\ngem 'chefspec', '4.2.0'%s\ngem 'foodcritic', '4.0.0'%s\ngem 'test-kitchen'" > Gemfile
+  gem install bundler --no-ri --no-rdoc
   bundle install
