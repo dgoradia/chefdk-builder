@@ -1,5 +1,5 @@
 name: chefdk-builder
-version: 1.1.4
+version: 1.1.5
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type: service
 platform: ubuntu@12.04
@@ -12,9 +12,9 @@ packages:
   - chef-dk@0.4.0-1
 script: |
   sudo apt-get -y update
-  sudo apt-get -y install git wget build-essential libxml2 libxml2-dev
-  sudo wget -nv -N -P /var/cache/downloads https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.4.0-1_amd64.deb
-  sudo dpkg -i /var/cache/downloads/chefdk_0.4.0-1_amd64.deb
-  sudo rm -f /var/cache/downloads/chefdk_0.4.0-1_amd64.deb
+  sudo apt-get -y install git wget build-essential
+  sudo wget -nv -N -P /var/cache/downloads https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.5.0-1_amd64.deb
+  sudo dpkg -i /var/cache/downloads/chefdk_0.5.0-1_amd64.deb
+  sudo rm -f /var/cache/downloads/chefdk_0.5.0-1_amd64.deb
   chef -v
   echo 'eval "$(chef shell-init bash)"' | sudo tee --append /etc/profile > /dev/null
