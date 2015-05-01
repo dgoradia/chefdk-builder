@@ -1,5 +1,5 @@
 name: chefdk-builder
-version: 1.1.2
+version: 1.1.3
 type: main
 platform: ubuntu@12.04
 description: Wercker box for ChefDK
@@ -9,7 +9,7 @@ packages:
   - chef-dk@0.4.0-1
 script: |
   sudo apt-get -y update
-  sudo apt-get -y install git wget build-essential libxml2
+  sudo apt-get -y install git wget build-essential libxml2 libxml2-dev
   sudo wget -nv -N -P /var/cache/downloads https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.4.0-1_amd64.deb
   sudo dpkg -i /var/cache/downloads/chefdk_0.4.0-1_amd64.deb
   sudo rm -f /var/cache/downloads/chefdk_0.4.0-1_amd64.deb
