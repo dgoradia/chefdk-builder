@@ -1,5 +1,5 @@
 name: chefdk-builder
-version: 1.2.4
+version: 1.2.5
 type: main
 platform: ubuntu@12.04
 description: Wercker box for ChefDK
