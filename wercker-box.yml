@@ -1,5 +1,5 @@
 name: chefdk-builder
-version: 1.2.2
+version: 1.2.3
 type: main
 platform: ubuntu@12.04
 description: Wercker box for ChefDK
@@ -15,11 +15,11 @@ packages:
   - vagrant@1.7
 script: |
   sudo apt-get -y update
-  sudo apt-get -y install wget
+  sudo apt-get -y install wget git build-essential autoconf linux-headers-3.2.0-54-virtual
   sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" >> /etc/apt/sources.list'
   wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
   sudo apt-get -y update
-  sudo apt-get -y install git build-essential autoconf dkms virtualbox-4.3
+  sudo apt-get -y install dkms virtualbox-4.3
   sudo wget -nv -N -P /var/cache/downloads https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.5.1-1_amd64.deb
   sudo dpkg -i /var/cache/downloads/chefdk_0.5.1-1_amd64.deb
   sudo rm -f /var/cache/downloads/chefdk_0.5.1-1_amd64.deb
