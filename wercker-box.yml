@@ -14,8 +14,9 @@ packages:
   - virtualbox@4.3
   - vagrant@1.7
 script: |
-  sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" >> /etc/apt/sources.list'
+  sudo apt-get -y update
   sudo apt-get -y install wget
+  sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" >> /etc/apt/sources.list'
   wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
   sudo apt-get -y update
   sudo apt-get -y install git build-essential autoconf dkms virtualbox-4.3
