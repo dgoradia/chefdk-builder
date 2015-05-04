@@ -8,10 +8,9 @@ keywords:
   - chef-dk
   - ruby
   - vagrant
-  - virtualbox
 packages:
   - chef-dk@0.5.1-1
-  - vagrant@1.7
+  - vagrant@1.7.2
 script: |
   sudo apt-get -y update
   sudo apt-get -y install wget git build-essential autoconf
@@ -24,5 +23,3 @@ script: |
   sudo dpkg -i /var/cache/downloads/vagrant_1.7.2_x86_64.deb
   sudo rm -f /var/cache/downloads/vagrant_1.7.2_x86_64.deb
   vagrant -v
-  vagrant plugin install vagrant-berkshelf
-  vagrant plugin install vagrant-omnibus
