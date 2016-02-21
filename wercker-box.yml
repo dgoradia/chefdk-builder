@@ -1,5 +1,5 @@
 name: chefdk-builder
-version: 1.2.5
+version: 1.2.6
 type: main
 platform: ubuntu@12.04
 description: Wercker box for ChefDK
@@ -9,14 +9,14 @@ keywords:
   - ruby
   - vagrant
 packages:
-  - chef-dk@0.5.1-1
+  - chef-dk@0.10.0-1
   - vagrant@1.7.2
 script: |
   sudo apt-get -y update
   sudo apt-get -y install wget git build-essential autoconf
-  sudo wget -nv -N -P /var/cache/downloads https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.5.1-1_amd64.deb
-  sudo dpkg -i /var/cache/downloads/chefdk_0.5.1-1_amd64.deb
-  sudo rm -f /var/cache/downloads/chefdk_0.5.1-1_amd64.deb
+  sudo wget -nv -N -P /var/cache/downloads https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.10.0-1_amd64.deb
+  sudo dpkg -i /var/cache/downloads/chefdk_0.10.0-1_amd64.deb
+  sudo rm -f /var/cache/downloads/chefdk_0.10.0-1_amd64.deb
   chef -v
   echo 'eval "$(chef shell-init bash)"' | sudo tee --append /etc/profile > /dev/null
   sudo wget -nv -N -P /var/cache/downloads https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
