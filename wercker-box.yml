@@ -19,7 +19,7 @@ script: |
   sudo rm -f /var/cache/downloads/chefdk_0.10.0-1_amd64.deb
   chef -v
   echo 'eval "$(chef shell-init bash)"' | sudo tee --append /etc/profile > /dev/null
-  sudo wget -nv -N -P /var/cache/downloads https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+  sudo wget -nv -N -P /var/cache/downloads https://releases.hashicorp.com/vagrant/1.7.2/vagrant_1.7.2_x86_64.deb
   sudo dpkg -i /var/cache/downloads/vagrant_1.7.2_x86_64.deb
   sudo rm -f /var/cache/downloads/vagrant_1.7.2_x86_64.deb
   vagrant -v
